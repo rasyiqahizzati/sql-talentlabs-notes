@@ -1,0 +1,31 @@
+-- GROUP BY
+SELECT
+    year,
+    AVG(rating) AS avg_rating
+FROM sample_movies
+GROUP BY year
+
+
+-- HAVING
+-- WHERE cannot directly filter the aggregation result
+-- Solution 1 : Using Subquery
+SELECT
+    year,
+    avg_rating
+FROM
+(
+    SELECT
+        year,
+        AVG(rating) AS avg_rating
+        FROM sample_movies
+        GROUP BY year
+)
+WHERE avg_rating >= 8 -- this works
+
+--Solution 2 : HAVING keywoard
+SELECT
+    year,
+    AVG(rating) AS avg_rating
+FROM sample_movies
+GROUP BY year
+HAVING AVG(rating) >= 8

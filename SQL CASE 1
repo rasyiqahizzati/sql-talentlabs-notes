@@ -1,0 +1,10 @@
+SELECT 
+    title,
+    CASE year
+        WHEN 2000 THEN 'Released in 2000'
+        WHEN 2009 THEN 'Released in 2009'
+        WHEN 2013 THEN 'Released in 2013'
+        WHEN 1980 THEN 'Released in 1980'
+        WHEN 1983 THEN 'Released in 1983'
+    END AS movie_period
+FROM movies

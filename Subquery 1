@@ -1,0 +1,8 @@
+SELECT movie_id, rating FROM ratings
+WHERE movie_id IN (
+    SELECT id 
+    FROM movies
+    WHERE title LIKE 'Toy Story%'
+)
+
+-- The result : Toy Story, Toy Story 2, Toy Story 3 and all rating for all the movies

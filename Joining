@@ -1,0 +1,32 @@
+SELECT *
+FROM 
+    movies JOIN rating
+    ON movies.id = rating.vovie_id
+
+
+    -- Types of Joining
+-- Inner Join - it takes what it has in the table
+SELECT id, title, rating
+FROM
+    movies JOIN ratings
+        ON movies.id = ratings.movie_id
+
+-- left join - all left tables has and the right the only data will be include if the right has.
+SELECT id, title, rating
+FROM
+    movies LEFT JOIN ratings
+        ON movies.id = ratings.movie_id
+
+
+-- right join
+SELECT id, movie_id, rating
+FROM
+    movies RIGHT JOIN ratings
+        ON movies.id = ratings.movie_id
+
+-- Full Outer Join/Full Join #not available in SQLite
+SELECT id, movie_id, rating
+FROM
+    movies FULL OUTER JOIN ratings
+        ON movies.id = ratings.movie_id
+

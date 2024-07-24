@@ -1,0 +1,54 @@
+-- UNION/UNION ALL
+SELECT year
+FROM movies
+UNION 
+SELECT year
+FROM tv_shows
+-- Or
+SELECT year
+FROM movies
+UNION ALL -- will not remove the duplicate
+SELECT year
+FROM tv_shows
+
+-- CREATE,ALTER and DROP Table
+CREATE TABLE movies (
+    id  -- column_name and data_type
+    name TEXT
+    year INTEGER
+)
+
+ALTER TABLE table_name
+ADD column_name_datatype;
+
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+ALTER TABLE table_name
+RENAME COLUMN current_name TO new_name;
+
+ALTER TABLE table_name
+RENAME TO new_table_name;
+
+-- DROP
+DROP TABLE movies
+
+
+-- INSERT, UPDATE AND DELETE RECORDS
+INSERT INTO movies -- tables_name
+(id, name, year) -- column
+VALUES(1,'Toy Story',2005)
+
+-- Update
+UPDATE movies -- table_name
+SET name = Star Wars, year = 1978 -- values
+where id = 1 -- condition
+
+-- another UPDATE example
+UPDATE movies
+SET year = 0000
+where year is NULL
+
+-- Delete
+DELETE FROM movies where id = 1 -- table_name and condition
+

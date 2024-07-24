@@ -1,0 +1,8 @@
+SELECT 
+title,
+CASE
+    WHEN year > 1999 THEN 'Released after 2000'
+    ELSE 'Release before 2000'
+END AS movie_period
+FROM movies
+

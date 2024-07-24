@@ -1,2 +1,0 @@
-# sql-talentlabs-notes
-subqueries
